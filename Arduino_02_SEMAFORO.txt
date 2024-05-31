@@ -1,0 +1,38 @@
+// Semáforo sencillo en Arduino
+int tiempoEsperaROJO = 3000;
+int tiempoEsperaAMARILLO = 1000;
+int tiempoEsperaVERDE = 2000;
+ 
+void setup(){
+    pinMode(10, OUTPUT);    // Rojo
+    pinMode(9, OUTPUT);     // Amarillo
+    pinMode(8, OUTPUT);     // Verde
+    pinMode(2, OUTPUT);     // VERDE PEATON
+    pinMode(3, OUTPUT);     // ROJO PEATON
+}
+
+void loop() {
+    digitalWrite(10, HIGH);     // rojo encendido
+    digitalWrite(8, LOW);      // verde APAGADO
+    digitalWrite(9, LOW);       // amarillo apagado
+    digitalWrite(2, HIGH);     // VERDE PEATON ENCENDIDO
+    digitalWrite(3, LOW);     // ROJO PEATON APAGADO
+
+  delay(tiempoEsperaROJO);
+
+ 
+    digitalWrite(10, HIGH);     // rojo encendido
+    digitalWrite(9, HIGH);      // amarillo encendido
+    digitalWrite(8, LOW);       // verde apagado
+    digitalWrite(2, LOW);     // VERDE PEATON APAGADO
+ delay(2000);
+
+
+    digitalWrite(8, HIGH);      // verde encendido
+    digitalWrite(10, LOW);      // rojo apagado
+    digitalWrite(9, LOW);       // amarillo apagado
+    digitalWrite(3, HIGH);     // ROJO PEATON APAGADO
+ delay(tiempoEsperaVERDE);
+
+ 
+}
